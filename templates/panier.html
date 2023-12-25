@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Panier</title>
+</head>
+<body>
+    <div class="head">
+        <h1>MR Le Gourmand</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/menu">Menu</a>
+            <a href="/panier">Panier</a>
+        </nav>
+    </div>
+    <div class="panier">
+        <h2>Panier</h2>
+        {% for item in panier %}
+            <div class="panier-item">
+                <h3>{{ item.name }}</h3>
+                <span>${{ item.price }}</span>
+                <form action="/delete_from_panier" method="post">
+                    <input type="hidden" name="item_name" value="{{ item.name }}">
+                    <input type="hidden" name="item_price" value="{{ item.price }}">
+                    <button type="submit" name="delete" id="Deleted">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+        <p>Total Price: ${{ total_price }}</p>
+        <form action="/clear_panier" method="post">
+            <button type="submit" name="clear" id="clear">Clear Panier</button>
+        </form>
+    </div>
+    <div class="footer">
+        <nav>
+            <p>&copy; Copyright 2024</p>
+        </nav>
+    </div>
+</body>
+</html>
