@@ -35,6 +35,16 @@
             <button type="submit" name="clear" id="clear">Clear Panier</button>
         </form>
     </div>
+    <div class="payment">
+        <form action="/process_payment" method="post">
+            <label for="payment_method">Choose Payment Method:</label>
+            <select name="payment_method" id="payment_method">
+                <option value="carte" id="carte">Par Carte</option>
+                <option value="cash" id="cash">Cash</option>
+            </select>
+            <button type="submit" id="submit">Process Payment</button>
+        </form>
+    </div>
     <div class="footer">
         <nav>
             <p>&copy; Copyright 2024</p>

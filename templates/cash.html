@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .payment-container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .payment-info {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .payment-image {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .payment-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .payment-form label {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .payment-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .payment-form button {
+            padding: 10px;
+            background-color:#555;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .payment-form button:hover {
+            background-color: #6f5636;
+        }
+    </style>
+    <title>Cash Payment</title>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Cash Payment</h1>
+        <div class="payment-info">
+            <p>Thank you for choosing our service!</p>
+            <p>Please have the exact amount ready for the cash payment.</p>
+            <p>Our delivery person will collect the payment upon delivery.</p>
+        </div>
+        <img class="payment-image" src="https://www.creativefabrica.com/wp-content/uploads/2021/09/15/Money-finance-cash-payment-icon-Graphics-17346742-1-312x208.jpg" alt="Cash Payment Image"> 
+        <form class="payment-form" action="/submit_cash_payment" method="post">
+            <label for="table_number">Enter the number of your table:</label>
+            <input type="number" id="table_number" name="table_number" required>
+            <button type="submit">Confirm Cash Payment</button>
+        </form>
+    </div>
+</body>
+</html>

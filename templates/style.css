@@ -125,7 +125,7 @@ nav a:hover {
 .panier {
     max-width: 800px;
     margin: 2em auto;
-    background-color: #fff;
+    background-color: #eee;
     padding: 1em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -206,4 +206,83 @@ nav a:hover {
     text-decoration: #795847;
     color: antiquewhite;
     border-radius: 5px;
+}
+
+#submit{
+    background-color: rgb(40, 36, 55);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.payment {
+    text-align: center;
+    background-color: #eee;
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#payment_method {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ccc;
+}
+
+#cash-method {
+    justify-content: center;
+}
+
+.payment-container {
+    background-color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 450px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 390px;
+}
+
+.payment-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-form label {
+    text-align: left;
+    color: #555;
+}
+
+.payment-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.payment-form button {
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #6f5636;
 }

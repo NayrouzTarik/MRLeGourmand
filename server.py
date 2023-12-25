@@ -31,7 +31,7 @@ def panier_page():
         session['panier'] = []
 
     panier = session['panier']
-    total_price = sum(item['price'] for item in panier)
+    total_price = round(sum(item['price'] for item in panier),2)
 
     return render_template('panier.html', panier=panier, total_price=total_price)
 
@@ -68,6 +68,34 @@ def clear_panier():
 
     return redirect('/panier')
 
+@app.route('/process_payment', methods=['POST'])
+def process_payment():
+    payment_method = request.form.get('payment_method')
+
+    session['panier'] = []  
+    flash('Payment Done! Thank you for your order.')
+
+    if payment_method == 'carte':
+        return render_template('parcarte.html') 
+    elif payment_method == 'cash':
+        return render_template('cash.html')
+
+    return redirect(url_for('home'))
+
+@app.route('/submit_carte_payment', methods=['POST'])
+def submit_carte_payment():
+    flash('Payment Done! Thank you for your order.')
+
+    if request.form.get('home_redirect'):
+        return render_template('index.html')
+    else:
+        return render_template('index.html')
+    
+@app.route('/submit_cash_payment', methods=['POST'])
+def submit_cash_payment():
+    flash('Payment Done! Thank you for your order.')
+
+    return redirect(url_for('home'))
 
 @app.route('/contact')
 def contact():
@@ -75,7 +103,7 @@ def contact():
 
 @app.route('/submit_contact', methods=['POST'])
 def submit_contact():
-    return redirect(url_for('home'))
+    return redirect(url_for('index.html'))
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
